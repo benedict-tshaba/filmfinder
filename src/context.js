@@ -20,7 +20,7 @@ export class Provider extends Component {
 			throw new Error('Network response was not OK');
 		})
 		.then( (data) => { 
-			console.log(data);
+			//console.log(data);
 			this.setState({film_list: data.Search});
 		})
 		.catch( (err) => { console.log(err); });

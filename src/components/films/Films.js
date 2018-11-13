@@ -18,11 +18,11 @@ class Films extends Component {
 			  		return (
 			  			<React.Fragment>
 			  			  <h3 className="text-center mb-4">{heading}</h3>
-			  			<div className="row">
-			  			  {film_list.map( (item) => (
-			  			  	<Film key={item.imdbID} film={item} />
-			  			  ) )}
-			  			</div>
+			  			  <div className="row">
+			  			    {film_list.map( (item) => (
+			  			  	  <Film key={item.imdbID} film={item} />
+			  			    ) )}
+			  			  </div>
 			  			</React.Fragment>
 			  		);
 			  	}
