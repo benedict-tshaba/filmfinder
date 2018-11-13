@@ -11,9 +11,11 @@ const Film = (props) => {
 		    <div className="card-body">
 		      <h5>{film.Title}</h5>
 		      <p className="card-text">
-		        <strong><i className="fa fa-play"></i> Film</strong>: {film.Title}
+		        <strong><i className="fa fa-film"></i> Film</strong>: {film.Title}
 		        <br/>
-		        <strong><i className="fa fa-calendar"></i> Year</strong>: {film.year}
+		        <strong><i className="fa fa-random"></i> Type</strong>: {film.Type.toUpperCase()}
+		        <br/>
+		        <strong><i className="fa fa-calendar"></i> Year</strong>: {film.Year}
 		      </p>
 		      <Link to={`films/film/${film.imdbID}`} className="btn btn-dark btn-block">
 		        <i className="fa fa-chevron-right"></i> View Details

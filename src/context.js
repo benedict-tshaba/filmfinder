@@ -13,8 +13,15 @@ export class Provider extends Component {
 	componentDidMount() {
 		fetch(`http://www.omdbapi.com/?s=Predator&apikey=${process.env.REACT_APP_API_KEY}`)
 		.then( (res) => { 
-			//console.log(res.data); 
-			this.setState({film_list: res.Search});
+			if(res.ok) {
+				//this.setState({film_list: res});
+				return res.json();	
+			}
+			throw new Error('Network response was not OK');
+		})
+		.then( (data) => { 
+			console.log(data);
+			this.setState({film_list: data.Search});
 		})
 		.catch( (err) => { console.log(err); });
 	}
