@@ -5,7 +5,7 @@ const Context = React.createContext();
 export class Provider extends Component {
 
 	state = {
-		film_list: [],
+		film_list: [{ Year:'2006', Title: 'Some Movie', Type: 'movie', imdbID:'123' }],
 		heading: 'Top 10 Films'
 
 	};
