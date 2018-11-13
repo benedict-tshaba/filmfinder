@@ -37,7 +37,7 @@ class Details extends Component {
 				    <h5 className="card-header">
 				      {film.Title} by <span className="text-secondary">{film.Director}</span>
 				    </h5>
-				    <img src={film.Poster} className="" alt="Poster" height="200" width="200" />
+				    <img src={film.Poster} className="ml-5 mt-2" alt="Poster" height="200" width="200" />
 				    <div className="card-body">
 				      <p className="card-text">{film.Plot}</p>
 				    </div>
