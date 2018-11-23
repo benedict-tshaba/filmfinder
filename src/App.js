@@ -13,7 +13,7 @@ class App extends Component {
   render() {
     return (
       <Provider>
-        <Router>
+        <Router basename="/filmfinder">
           <React.Fragment>
             <Navbar />
             <div className="container">
