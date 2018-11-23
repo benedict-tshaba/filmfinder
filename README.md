@@ -9,4 +9,4 @@ My second React App, decided to make a film finder app. The first time you load 
 
 
 ## ToDo:
-1. [] Make it progressive?
+1. [ ] Make it progressive?
