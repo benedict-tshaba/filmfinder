@@ -10,7 +10,7 @@ class Search extends Component {
 
 	findFilm = (dispatch, e) => {
 		e.preventDefault();
-		fetch(`http://www.omdbapi.com/?s=${this.state.filmTitle}&apikey=${process.env.REACT_APP_API_KEY}`)
+		fetch(`https://www.omdbapi.com/?s=${this.state.filmTitle}&apikey=${process.env.REACT_APP_API_KEY}`)
 		.then( (res) => { 
 			if(res.ok) {
 				return res.json();	

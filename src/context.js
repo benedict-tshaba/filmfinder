@@ -26,7 +26,7 @@ export class Provider extends Component {
 	};
 
 	componentDidMount() {
-		fetch(`http://www.omdbapi.com/?s=${titles[Math.floor(Math.random()*titles.length)]}&apikey=${process.env.REACT_APP_API_KEY}`)
+		fetch(`https://www.omdbapi.com/?s=${titles[Math.floor(Math.random()*titles.length)]}&apikey=${process.env.REACT_APP_API_KEY}`)
 		.then( (res) => { 
 			if(res.ok) {
 				//this.setState({film_list: res});
