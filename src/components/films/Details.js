@@ -10,7 +10,7 @@ class Details extends Component {
 	};
 
 	componentDidMount() {
-		fetch(`https://www.omdbapi.com/?i=${this.props.match.params.id}&apikey=${process.env.REACT_APP_API_KEY}`)
+		fetch(`${process.env.REACT_APP_API_LNK}?i=${this.props.match.params.id}&apikey=${process.env.REACT_APP_API_KEY}`)
 		.then( (res) => { 
 			if(res.ok) {
 				return res.json();	
