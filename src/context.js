@@ -10,23 +10,30 @@ const reducer = (state, action) => {
 				film_list: action.payload,
 				heading: 'Search Results'
 			};
+        case 'FOTM':
+            return {
+                ...state,
+                fotm: action.payload,
+                heading: 'Film Of The Moment'
+            };
 		default:
 			return state;
 	}
 };
 
-const titles = ['John Wick', 'The Lord of the Rings', 'Predator', 'Basic Instict', 'The Matrix', 'The Godfather', 'Citizen Kane', 'Pulp Fiction', 'The Dark Knight', 'Jaws', 'Toy Story', 'Titanic', 'Back to the Future', 'Alien'];
+const movies = ['tt0111161', 'tt0120737', 'tt0068646', 'tt0137523', 'tt0133093', 'tt0080684', 'tt1375666', 'tt0110912', 'tt0468569', 'tt0109830', 'tt0088763', 'tt0245429', 'tt0110357'];
 
 export class Provider extends Component {
 
 	state = {
 		film_list: [],
-		heading: 'Film of the Moment',
+        fotm: null,
+		heading: 'Film Of The Moment',
 		dispatch: action => this.setState( state => reducer(state, action) )
 	};
 
 	componentDidMount() {
-		fetch(`${process.env.REACT_APP_API_LNK}?s=${titles[Math.floor(Math.random()*titles.length)]}&apikey=${process.env.REACT_APP_API_KEY}`)
+		fetch(`${process.env.REACT_APP_API_LNK}?i=${movies[Math.floor(Math.random()*movies.length)]}&apikey=${process.env.REACT_APP_API_KEY}`)
 		.then( (res) => { 
 			if(res.ok) {
 				//this.setState({film_list: res});
@@ -36,7 +43,7 @@ export class Provider extends Component {
 		})
 		.then( (data) => { 
 			//console.log(data);
-			this.setState({film_list: data.Search});
+			this.setState({fotm: data});
 		})
 		.catch( (err) => { console.log(err); });
 	}

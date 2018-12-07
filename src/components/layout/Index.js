@@ -1,13 +1,13 @@
 import React from 'react';
-import Films from '../films/Films';
 import Search from '../films/Search';
+import Fotm from '../films/Fotm';
 
 const Index = () => {
 	return (
-		<React.Fragment>
-		  <Search />
-		  <Films />
-		</React.Fragment>
+        <React.Fragment>
+            <Search />
+            <Fotm />
+        </React.Fragment>
 	);
 };
 
