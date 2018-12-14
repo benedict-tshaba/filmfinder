@@ -10,15 +10,9 @@ class Search extends Component {
 
 	findFilm = (dispatch, e) => {
 		e.preventDefault();
-		fetch(`${process.env.REACT_APP_API_KEY}?s=${this.state.filmTitle}&apikey=${process.env.REACT_APP_API_KEY}`)
-		.then( (res) => { 
-			if(res.ok) {
-				return res.json();	
-			}
-			throw new Error('Network response was not OK');
-		})
+		fetch(`${process.env.REACT_APP_API_LNK}?s=${this.state.filmTitle}&apikey=${process.env.REACT_APP_API_KEY}`)
+		.then( (res) => res.json() )
 		.then( (data) => { 
-			//console.log(data);
 			dispatch({
 				type: 'SEARCH_FILMS',
 				payload: data.Search
