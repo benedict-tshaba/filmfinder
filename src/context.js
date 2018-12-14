@@ -34,15 +34,8 @@ export class Provider extends Component {
 
 	componentDidMount() {
 		fetch(`${process.env.REACT_APP_API_LNK}?i=${movies[Math.floor(Math.random()*movies.length)]}&apikey=${process.env.REACT_APP_API_KEY}`)
-		.then( (res) => { 
-			if(res.ok) {
-				//this.setState({film_list: res});
-				return res.json();	
-			}
-			throw new Error('Network response was not OK');
-		})
+		.then( (res) => res.json() )
 		.then( (data) => { 
-			//console.log(data);
 			this.setState({fotm: data});
 		})
 		.catch( (err) => { console.log(err); });
